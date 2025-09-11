@@ -85,3 +85,67 @@ cart.add_products(('mobile', 2), ('tablet', 3), ('mobile', 5))
 cart.show_cart()
 
 print('*************Second Assignment Completed******************')
+
+
+
+
+# Q3. Discount Application (Static Polymorphism)
+ 
+# Problem Statement:
+# Create a class Discount that allows applying different types of discounts:
+ 
+# Flat discount
+# Percentage discount
+# Buy One Get One
+ 
+# Use static polymorphism to overload the method using default parameters or *args
+
+class Discount:
+    def apply_discount(self, flat = None, percentage = None, BuyOneGetOne = None):
+        if (flat is not None and percentage is None and BuyOneGetOne is None):
+            print("Apply flat discout")
+        elif (percentage is not None and BuyOneGetOne is None):
+            print("Apply percentahe discount")
+        elif (BuyOneGetOne is not None):
+            print("Apply Buy One Get One dicount")
+        else:
+            print("No discount is applied")
+
+
+discount = Discount()
+discount.apply_discount("flat")
+discount.apply_discount(None, "percentage")
+discount.apply_discount(None, None, "BuyOneGetOne")
+print("************************Third assignment completed*****************************")
+
+
+# Q4. Payment System (Dynamic Polymorphism)
+ 
+# Problem Statement:
+# Implement a base class Payment and subclasses CreditCardPayment, UPIPayment, and CODPayment. Each should override a method pay().
+ 
+# Requirements:
+# Override pay() method in each class to simulate different payment methods
+
+class Payment:
+    def pay(self):
+        print("Pay payment")
+
+class CreditCardPayment(Payment):
+    def pay(self):
+        print("Make a credit card payment")
+
+class UPIPayment(Payment):
+    def pay(self):
+        print("Make a UPI payment")
+
+class CODPayment(Payment):
+    def pay(self):
+        print("Make a COD payment")
+
+
+payment_mothods = [CreditCardPayment(), UPIPayment(), CODPayment()]
+for item in payment_mothods:
+    item.pay()
+
+print("************************Fourth assignment completed*****************************")
