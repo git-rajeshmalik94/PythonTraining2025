@@ -55,7 +55,6 @@ class Cart:
         self.items = {}  # Dictionary to store items: {product_name: quantity}
 
     def add_products(self, *args):
-        # Handle *args: expecting tuples of (product, quantity)
         for item in args:
             if isinstance(item, tuple) and len(item) == 2:
                 product, quantity = item
